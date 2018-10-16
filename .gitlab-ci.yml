@@ -1,0 +1,12 @@
+image: kahwee/node-ruby-dpl
+cache:
+  paths:
+  # - node_modules/
+
+production:
+  type: deploy
+  script:
+  - dpl --provider=heroku --app=web-agro-control-system  --api-key=$HEROKU_PRODUCTION_API_KEY
+
+  only:
+  - master
